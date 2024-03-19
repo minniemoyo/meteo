@@ -59,6 +59,7 @@ header {
 .weather-app-details {
   display: flex;
   justify-content: space-between;
+  padding: 40px 0 40px 0;
   margin-bottom: 20px;
   border-top: 0.5px solid rgba(166, 193, 238, 0.2);
   border-bottom: 0.5px solid rgba(166, 193, 238, 0.2);
@@ -80,7 +81,10 @@ header {
 .degrees {
   margin-top: 18px;
 }
-.precipitation-other-details {
+.fahrenheit {
+  color: rgb(166, 193, 238);
+}
+.other-details {
   margin-top: 18px;
   font-size: 14px;
 }
