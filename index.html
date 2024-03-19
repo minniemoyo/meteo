@@ -3,40 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Meteo Weather App</title>
   </head>
   <body>
-    <header>
-      <form>
-        <input type="text" placeholder="Enter a City" required />
-        <input type="submit" value="Search" />
-      </form>
-    </header>
-    <main>
-      <div>
-        <span>🌥️</span><span>28</span>
-        <div><span>°C</span>|<span>°F</span></div>
-      </div>
-      <div>
-        Precipitation: 0% <br />
-        Humidity: 61% <br />
-        Wind: 19 km/h <br />
-      </div>
-      <div>
-        City <br />
-        Monday 9:00pm <br />
-        Partly Cloudy
-      </div>
-    </main>
-    <footer>
-      Coded by
-      <a href="https://github.com/minniemoyo" target="_blank">Minnie Moyo</a> 🩷,
-      is open-sourced on
-      <a href="https://github.com/minniemoyo/meteo" target="_blank">Github</a>
-      , and the website is hosted on
-      <a href="https://minnie-weather-app.netlify.app/" target="_blank"
-        >Netlify</a
-      >.
-    </footer>
+    <div class="container">
+      <header>
+        <form class="search-form">
+          <input
+            type="text"
+            placeholder="Enter a City..."
+            required
+            class="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-form-button" />
+        </form>
+      </header>
+      <main class="weather-app-details">
+        <div class="weather-details">
+          <div class="emoji-temp-details">
+            <div class="emoji">🌥️</div>
+            <div class="main-temp">28</div>
+            <div class="degrees">°C<span class="fahrenheit"> |°F</span></div>
+          </div>
+          <div class="precipitation-other-details">
+            <p>
+              Precipitation: 0% <br />
+              Humidity: 61% <br />
+              Wind: 19 km/h <br />
+            </p>
+          </div>
+        </div>
+        <div class="city-details">
+          <h1>City</h1>
+          <p>
+            Monday 9:00pm <br />
+            Partly Cloudy
+          </p>
+        </div>
+      </main>
+      <footer>
+        This project was coded by
+        <a href="https://github.com/minniemoyo" target="_blank">Minnie Moyo</a>
+        🩷, is open-sourced on
+        <a href="https://github.com/minniemoyo/meteo" target="_blank">Github</a>
+        , and hosted on
+        <a href="https://minnie-weather-app.netlify.app/" target="_blank"
+          >Netlify</a
+        >.
+      </footer>
+    </div>
   </body>
 </html>
