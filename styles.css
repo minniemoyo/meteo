@@ -98,7 +98,9 @@ header {
 .city-details p {
   font-size: 14px;
 }
-
+.weather-condition {
+  font-weight: 700;
+}
 .feels-like,
 .humidity,
 .wind {
