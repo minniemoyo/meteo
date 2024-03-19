@@ -30,23 +30,23 @@
       <main class="weather-app-details">
         <div class="weather-details">
           <div class="emoji-temp-details">
-            <div class="emoji">🌥️</div>
+            <div class="icon" id="icon"></div>
             <div class="main-temp" id="main-temp"></div>
             <div class="degrees">°C<span class="fahrenheit"> |°F</span></div>
           </div>
           <div class="precipitation-other-details">
             <p>
-              Precipitation: 0% <br />
-              Humidity: 61% <br />
-              Wind: 19 km/h <br />
+              Feels like: <span class="feels-like" id="feels-like"></span><br />
+              Humidity: <span class="humidity" id="humidity"></span> <br />
+              Wind: <span class="wind" id="wind"></span><br />
             </p>
           </div>
         </div>
         <div class="city-details">
           <h1 id="city"></h1>
           <p>
-            <span id="date"> Monday 19:00, </span> <br />
-            Partly Cloudy
+            <span id="date"></span> <br />
+            <span id="weather-condition"></span>
           </p>
         </div>
       </main>

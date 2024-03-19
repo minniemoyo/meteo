@@ -1,13 +1,42 @@
 function updateTemperature(response) {
+  //update time on page
+  let apiDate = new Date(response.data.time * 1000);
+  updateTime(apiDate);
+
   //update temperature on page
   let cityTemperature = response.data.temperature.current;
   let mainTempElement = document.querySelector("#main-temp");
   mainTempElement.innerHTML = Math.round(cityTemperature);
 
+  //update icon on page
+  let iconElement = document.querySelector("#icon");
+  let apiIconUrl = response.data.condition.icon_url;
+  iconElement.innerHTML = `<img src="${apiIconUrl}" alt="weather-icon">`;
+
   //update city on page
   let city = document.querySelector("#city");
   let apiCity = response.data.city;
   city.innerHTML = apiCity;
+
+  //update feels-like temps on page
+  let feelsLikeTemp = document.querySelector("#feels-like");
+  let apiFeelsLikeTemp = response.data.temperature.feels_like;
+  feelsLikeTemp.innerHTML = `${Math.round(apiFeelsLikeTemp)}°`;
+
+  //update weather condition on page
+  let weatherCondition = document.querySelector("#weather-condition");
+  let apiWeather = response.data.condition.description;
+  weatherCondition.innerHTML = apiWeather;
+
+  //update humidity on page
+  let humidity = document.querySelector("#humidity");
+  let apiHumidity = response.data.temperature.humidity;
+  humidity.innerHTML = `${apiHumidity}%`;
+
+  //update wind speed on page
+  let windSpeed = document.querySelector("#wind");
+  let apiWindSpeed = response.data.wind.speed;
+  windSpeed.innerHTML = `${Math.round(apiWindSpeed)} km/h`;
 }
 
 function searchCity(city) {
@@ -23,8 +52,8 @@ function handleSearchEvent(event) {
   searchCity(searchInput.value);
 }
 
-function updateTime() {
-  let now = new Date();
+function updateTime(apiDate) {
+  let now = apiDate;
   let days = [
     "Sunday",
     "Monday",
@@ -48,8 +77,6 @@ function updateTime() {
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = date;
 }
-
-updateTime();
 
 let searchElement = document.querySelector("#search-form");
 searchElement.addEventListener("submit", handleSearchEvent);
