@@ -15,12 +15,13 @@
   <body>
     <div class="container">
       <header>
-        <form class="search-form">
+        <form class="search-form" id="search-form">
           <input
             type="text"
             placeholder="Enter a City..."
             required
             class="search-form-input"
+            id="search-form-input"
           />
           <input type="submit" value="Search" class="search-form-button" />
         </form>
@@ -41,9 +42,9 @@
           </div>
         </div>
         <div class="city-details">
-          <h1>City</h1>
+          <h1 id="city">City</h1>
           <p>
-            Monday 9:00pm <br />
+            <span id="date"> Monday 19:00 </span> <br />
             Partly Cloudy
           </p>
         </div>
@@ -59,5 +60,6 @@
         >.
       </footer>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
