@@ -27,28 +27,32 @@
           <input type="submit" value="Search" class="search-form-button" />
         </form>
       </header>
-      <main class="weather-app-details">
-        <div class="weather-details">
-          <div class="emoji-temp-details">
-            <div class="icon" id="icon"></div>
-            <div class="main-temp" id="main-temp"></div>
-            <div class="degrees">°C<span class="fahrenheit"> |°F</span></div>
+      <main>
+        <div class="weather-app-details">
+          <div class="current-weather-details">
+            <div class="emoji-temp-details">
+              <div class="icon" id="icon"></div>
+              <div class="main-temp" id="main-temp"></div>
+              <div class="degrees">°C<span class="fahrenheit"> |°F</span></div>
+            </div>
+            <div class="other-details">
+              <p>
+                Feels like: <span class="feels-like" id="feels-like"></span
+                ><br />
+                Humidity: <span class="humidity" id="humidity"></span> <br />
+                Wind: <span class="wind" id="wind"></span><br />
+              </p>
+            </div>
           </div>
-          <div class="other-details">
+          <div class="city-details">
+            <h1 id="city"></h1>
             <p>
-              Feels like: <span class="feels-like" id="feels-like"></span><br />
-              Humidity: <span class="humidity" id="humidity"></span> <br />
-              Wind: <span class="wind" id="wind"></span><br />
+              <span id="date"></span> <br />
+              <span class="weather-condition" id="weather-condition"></span>
             </p>
           </div>
         </div>
-        <div class="city-details">
-          <h1 id="city"></h1>
-          <p>
-            <span id="date"></span> <br />
-            <span class="weather-condition" id="weather-condition"></span>
-          </p>
-        </div>
+        <div class="weather-forecast" id="weather-forecast"></div>
       </main>
       <footer>
         This project was coded by
