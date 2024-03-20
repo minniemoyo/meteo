@@ -83,7 +83,7 @@ header {
   margin-top: 18px;
 }
 .fahrenheit {
-  color: rgb(166, 193, 238);
+  color: rgb(208, 208, 216);
 }
 .other-details {
   margin-top: 18px;
@@ -110,10 +110,9 @@ header {
   justify-content: space-between;
   margin-bottom: 20px;
 }
-
-.col-2 {
+.row {
   width: 100px;
-  height: 100px;
+  height: 150px;
 }
 .forecast-date,
 .forecast-temp {
@@ -136,7 +135,6 @@ header {
 .forecast-icon img {
   display: block;
   margin: 10px auto;
-  width: 50px;
 }
 footer {
   border-top: 0.5px solid rgba(166, 193, 238, 0.2);
