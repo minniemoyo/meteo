@@ -81,6 +81,13 @@ function updateTime(apiDate) {
   dateElement.innerHTML = date;
 }
 
+function updateForecastDay(apiDate) {
+  let now = apiDate;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[now.getDay()];
+  return day;
+}
+
 function getForecast(city) {
   let apiKey = "ad4b43cf6af0980of893btef5c61f2c7";
   let query = city;
@@ -92,30 +99,38 @@ function displayForecast(response) {
   console.log(response);
   let forecast = document.querySelector("#weather-forecast");
 
-  let days = ["Tue", "Wed", "Thurs", "Fri", "Sat"];
+  let days = response.data.daily;
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  days.forEach(function (day, index) {
+    if (index < 5) {
+      let icon_url = day.condition.icon_url;
+      let apiDay = new Date(day.time * 1000);
+      let dateElement = updateForecastDay(apiDay);
+      forecastHtml =
+        forecastHtml +
+        `
       <div class="row">
         <div class="col-2">
-          <div class="forecast-date">${day}</div>
+          <div class="forecast-date">${dateElement}</div>
           <div class="forecast-icon">
             <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png
-          "
+              src="${icon_url}"
               alt="weather-icon"
             />
           </div>
           <div class="forecast-temp">
-            <span class="forecast-high-temp">21°</span
-            ><span class="forecast-low-temp">/15°</span>
+            <span class="forecast-high-temp">${Math.round(
+              day.temperature.maximum
+            )}°</span
+            ><span class="forecast-low-temp">/${Math.round(
+              day.temperature.minimum
+            )}°</span>
           </div>
         </div>
       </div>
     `;
+    }
   });
 
   forecast.innerHTML = forecastHtml;
